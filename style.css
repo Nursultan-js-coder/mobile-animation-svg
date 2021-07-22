@@ -8,6 +8,12 @@
   height: 100vh;
   position: relative;
 }
+#path-1 {
+  opacity: 0;
+  animation: fadeIn 2s ease-out alternate infinite;
+  stroke-linejoin: round;
+  animation-delay: 3s;
+}
 svg {
   height: 100vh;
 }
@@ -47,8 +53,13 @@ svg {
     opacity: 1;
   }
 }
-#item3 {
-  /* animation-delay: calc(var(--order) * 300ms); */
-  /* border: 1px solid red; */
-  /* display: none; */
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
